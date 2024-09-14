@@ -9,14 +9,14 @@ document.getElementById('lookupForm').addEventListener('submit', function(event)
             const headers = rows[0];
             const nationalIdIndex = headers.indexOf('National ID');
             const usernameIndex = headers.indexOf('username');
-            const usercodeIndex = headers.indexOf('UserCode');
+			const usernameIndex2 = headers.indexOf('username2');
 
             for (let i = 1; i < rows.length; i++) {
                 const row = rows[i];
                 if (row[nationalIdIndex] === nationalId) {
                     document.getElementById('result').innerHTML = `
                         <p>Username: ${row[usernameIndex]}</p>
-                        <p>User Code: ${row[usercodeIndex]}</p>
+                        <p>User Code: ${row[usernameIndex2]}</p>
                     `;
                     return;
                 }
